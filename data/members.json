@@ -1,0 +1,32 @@
+[
+    {
+      "email": "admin@example.com",
+      "role": "Admin",
+      "projects": "All projects",
+      "permission": "Admin"
+    },
+    {
+      "email": "editor@example.com",
+      "role": "Editor",
+      "projects": "BCIS project",
+      "permission": "Can edit"
+    },
+    {
+      "email": "guest@example.com",
+      "role": "Guest",
+      "projects": "BCIS project, HCY project",
+      "permission": "Can view"
+    },
+    {
+      "email": "editor2@example.com",
+      "role": "Editor",
+      "projects": "BCIS project",
+      "permission": "Can edit"
+    },
+    {
+      "email": "guest2@example.com",
+      "role": "Guest",
+      "projects": "All projects",
+      "permission": "Can edit"
+    }
+  ]

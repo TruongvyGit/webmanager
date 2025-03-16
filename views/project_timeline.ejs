@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Timeline</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <a class="nav-link" href="/dashboard">
+        <i class="fa fa-th"></i>
+      </a>
+    </div>
+    <div class="project-name">Project Name</div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/project_summary">
+          <i class="fa fa-globe"></i> Summary
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/project_timeline">
+          <i class="fa fa-clock"></i> Timeline
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project_board">
+          <i class="fa fa-columns"></i> Board
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project_task">
+          <i class="fa fa-list"></i> Task List
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project_member">
+          <i class="fa fa-users"></i> Manage Members
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <div class="title-section">
+        <h1>Timeline</h1>
+        <button class="create-btn" data-bs-toggle="modal" data-bs-target="#createTaskModal">
+          <i class="fa fa-plus"></i> Create
+        </button>
+      </div>
+      <div class="icons">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-bell"></i>
+        <i class="fa fa-cog"></i>
+        <span class="profile">
+          <img src="https://via.placeholder.com/30" alt="Profile">
+        </span>
+      </div>
+    </div>
+
+    <!-- Timeline Header -->
+    <div class="timeline-header">
+      <div class="date-nav">
+        <button><i class="fa fa-chevron-left"></i></button>
+        <select>
+          <option>June</option>
+          <option selected>July</option>
+          <option>August</option>
+        </select>
+        <select>
+          <option>2023</option>
+          <option selected>2024</option>
+          <option>2025</option>
+        </select>
+        <button><i class="fa fa-chevron-right"></i></button>
+        <button class="today">Today</button>
+      </div>
+      <div class="view-toggle">
+        <button>Day</button>
+        <button class="active">Week</button>
+        <button>Month</button>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <!-- Time Labels -->
+      <div class="time-labels">
+        <div>08:00 AM</div>
+        <div>09:00 AM</div>
+        <div>10:00 AM</div>
+        <div>11:00 AM</div>
+        <div>12:00 PM</div>
+        <div>01:00 PM</div>
+        <div>02:00 PM</div>
+        <div>03:00 PM</div>
+      </div>
+
+      <!-- Days Header -->
+      <div class="days">
+        <div>14 MON</div>
+        <div>15 TUE</div>
+        <div>16 WED</div>
+        <div>17 THU</div>
+        <div>18 FRI</div>
+        <div>19 SAT</div>
+        <div>20 SUN</div>
+      </div>
+
+      <!-- Today Marker (giả định ngày 16/03/2025 là ngày hiện tại) -->
+      <div class="today-marker"></div>
+      <div class="current-time-line"></div>
+
+      <!-- Event Grid -->
+      <div class="event-grid">
+        <!-- Event 1: Project Kickoff -->
+        <div class="event" style="top: 0; left: 0; width: calc((100% - 80px) / 7 * 2); background-color: #e0f7fa;">
+          Project Kickoff<br>08:00 – 09:00 AM
+        </div>
+
+        <!-- Event 2: Happy Hour -->
+        <div class="event" style="top: 120px; left: calc(80px + (100% - 80px) / 7); width: calc((100% - 80px) / 7); background-color: #b2dfdb;">
+          Happy Hour<br>10:00 – 11:00 AM <i class="fa fa-star"></i>
+        </div>
+
+        <!-- Event 3: Creative Workshop -->
+        <div class="event" style="top: 60px; left: calc(80px + (100% - 80px) / 7 * 3); width: calc((100% - 80px) / 7); height: 180px; background-color: #ffccbc;">
+          Creative Workshop<br>09:00 AM – 12:00 PM
+        </div>
+
+        <!-- Event 4: One-on-one -->
+        <div class="event" style="top: 240px; left: 80px; width: calc((100% - 80px) / 7); background-color: #f8bbd0;">
+          One-on-one<br>01:00 – 02:00 PM <i class="fa fa-video"></i>
+        </div>
+
+        <!-- Event 5: One-on-one -->
+        <div class="event" style="top: 240px; left: calc(80px + (100% - 80px) / 7 * 2); width: calc((100% - 80px) / 7); background-color: #f8bbd0;">
+          One-on-one<br>01:00 – 02:00 PM <i class="fa fa-video"></i>
+        </div>
+
+        <!-- Event 6: Weekly Meeting -->
+        <div class="event" style="top: 240px; left: calc(80px + (100% - 80px) / 7 * 4); width: calc((100% - 80px) / 7); background-color: #e0e0e0;">
+          Weekly Meeting<br>01:00 – 02:00 PM
+        </div>
+
+        <!-- Event 7: One-on-one -->
+        <div class="event" style="top: 300px; left: calc(80px + (100% - 80px) / 7 * 2); width: calc((100% - 80px) / 7); background-color: #f8bbd0;">
+          One-on-one<br>02:00 – 03:00 PM <i class="fa fa-video"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Create Task -->
+    <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createTaskModalLabel">Create Task</h5>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn-close"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn-close"><i class="fa fa-arrows-alt"></i></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <p>Required fields are marked with an asterisk <span>*</span></p>
+            <div class="form-group">
+              <label for="project">Project <span>*</span></label>
+              <select id="project" class="form-select" disabled>
+                <option>Project Name (SCRUM)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="issueType">Issue Type <span>*</span></label>
+              <select id="issueType" class="form-select">
+                <option>Task</option>
+                <option>Story</option>
+                <option>Epic</option>
+                <option>Bug</option>
+              </select>
+              <a href="#" class="text-primary">Learn about issue types</a>
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" class="form-select" disabled>
+                <option>To Do</option>
+              </select>
+              <small class="text-muted">This is the initial status upon creation</small>
+            </div>
+            <div class="form-group">
+              <label for="summary">Summary <span>*</span></label>
+              <input type="text" id="summary" class="form-control" placeholder="Enter summary">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <div class="editor-toolbar">
+                <i class="fa fa-font"></i>
+                <i class="fa fa-bold"></i>
+                <i class="fa fa-italic"></i>
+                <i class="fa fa-list-ul"></i>
+                <i class="fa fa-list-ol"></i>
+                <i class="fa fa-link"></i>
+                <i class="fa fa-image"></i>
+                <i class="fa fa-smile"></i>
+                <i class="fa fa-code"></i>
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <textarea id="description" class="form-control" rows="5" placeholder="Enter description"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="createAnother">
+              <label class="form-check-label" for="createAnother">Create another</label>
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <a class="nav-link" href="/dashboard">
+        <i class="fa fa-th"></i>
+      </a>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="/dashboard">
+          <i class="fa fa-tachometer"></i> Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project_list">
+          <i class="fa fa-project-diagram"></i> Projects
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <div class="title-section">
+        <h1>Dashboard</h1>
+        <button class="create-btn" data-bs-toggle="modal" data-bs-target="#createTaskModal">
+          <i class="fa fa-plus"></i> Create
+        </button>
+      </div>
+      <div class="icons">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-bell"></i>
+        <span class="profile">
+          <img src="https://via.placeholder.com/30" alt="Profile">
+        </span>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="d-flex align-items-center">
+            <i class="fa fa-project-diagram text-primary"></i>
+            <div>
+              <h5 class="card-title">749 / 1100</h5>
+              <p class="card-text">Projects</p>
+              <p class="percentage increase">10% Increase Last Month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="d-flex align-items-center">
+            <i class="fa fa-briefcase text-warning"></i>
+            <div>
+              <h5 class="card-title">102 / 110</h5>
+              <p class="card-text">Tasks</p>
+              <p class="percentage decrease">6% Decrease Last Month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="d-flex align-items-center">
+            <i class="fa fa-check-circle text-success"></i>
+            <div>
+              <h5 class="card-title">Completed</h5>
+              <p class="card-text">&nbsp;</p>
+              <p class="percentage">&nbsp;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createTaskModalLabel">Create</h5>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn-close"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn-close"><i class="fa fa-arrows-alt"></i></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <p>Required fields are marked with an asterisk <span>*</span></p>
+            <div class="form-group">
+              <label for="project">Project <span>*</span></label>
+              <select id="project" class="form-select" disabled>
+                <option>project 1 (SCRUM)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="issueType">Issue type <span>*</span></label>
+              <select id="issueType" class="form-select">
+                <option>Task</option>
+                <option>Story</option>
+                <option>Epic</option>
+                <option>Bug</option>
+              </select>
+              <a href="#">Learn about issue types</a>
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" class="form-select" disabled>
+                <option>To Do</option>
+              </select>
+              <small class="text-muted">This is the initial status upon creation</small>
+            </div>
+            <div class="form-group">
+              <label for="summary">Summary <span>*</span></label>
+              <input type="text" id="summary" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <div class="editor-toolbar">
+                <i class="fa fa-font"></i>
+                <i class="fa fa-bold"></i>
+                <i class="fa fa-italic"></i>
+                <i class="fa fa-list-ul"></i>
+                <i class="fa fa-list-ol"></i>
+                <i class="fa fa-link"></i>
+                <i class="fa fa-image"></i>
+                <i class="fa fa-smile"></i>
+                <i class="fa fa-code"></i>
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <textarea id="description" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="createAnother">
+              <label class="form-check-label" for="createAnother">
+                Create another
+              </label>
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
